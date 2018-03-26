@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="abdul.malik.intaihere.MenuSetting.SettingActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+        <!--top tollbar-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rellayout1">
+
+            <include layout="@layout/layout_top_tabs"/>
+        </RelativeLayout>
+
+        <!--middle toolbar-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rellayout2"
+            android:layout_below="@id/rellayout1">
+
+            <RelativeLayout
+                android:id="@+id/relSettProfile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/grey_border_bottom"
+                android:clickable="true"
+                android:padding="5dp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_settFoto"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/boy"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:id="@+id/tv_settProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="55dp"
+                    android:background="@null"
+                    android:text="Username"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/relhapus"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/grey_border_bottom"
+                android:clickable="true"
+                android:layout_below="@id/relSettProfile">
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_identity"
+                    android:backgroundTint="@color/toska"/>
+                <TextView
+                    android:id="@+id/hapusakun"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="55dp"
+                    android:background="@null"
+                    android:text="Hapus Akun"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/reltentang"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/grey_border_bottom"
+                android:clickable="true"
+                android:layout_below="@id/relhapus">
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_error"
+                    android:backgroundTint="@color/toska"/>
+                <TextView
+                    android:id="@+id/tentang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="55dp"
+                    android:background="@null"
+                    android:text="Info Aplikasi"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_below="@id/reltentang"
+                android:id="@+id/relkeluar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/grey_border_bottom"
+                android:clickable="true">
+                <TextView
+                    android:layout_marginLeft="17dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_power"
+                    android:backgroundTint="@color/toska"/>
+                <TextView
+                    android:id="@+id/keluar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="55dp"
+                    android:background="@null"
+                    android:text="Keluar Akun"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

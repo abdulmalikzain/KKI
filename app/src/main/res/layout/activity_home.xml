@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeAct"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="abdul.malik.intaihere.HomeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--top tollbar-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rellayout1">
+
+            <include layout="@layout/layout_top_tabs"/>
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="130dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/logobar"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+
+
+        <!--middle toolbar-->
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="517dp"
+            android:id="@+id/mapsiki"
+            tools:context=".MapsActivity"
+            android:layout_below="@id/rellayout1"
+            android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/bt_getmarkers"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/ic_getmarkers"
+            app:civ_border_color="#a3a3a3"
+            app:civ_border_width="1dp"
+            app:civ_fill_color="#ffffff"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_alignParentRight="true"/>
+        <!--bootom-->
+        <include layout="@layout/layout_bottom_navigation_view"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

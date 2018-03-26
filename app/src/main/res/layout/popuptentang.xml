@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#515151"
+    android:padding="10dp">
+    <TextView
+        android:id="@+id/txtclose"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_cancel"
+        android:backgroundTint="@color/grey"/>
+    <ImageView
+        android:layout_marginTop="60dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logosplash"/>
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Version 1.0"
+        android:textColor="@color/white"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:text="Intai adalah sebuah aplikasi pelacakan antara user satu dengan lainya yang berbasis android. Aplikasi ini memanfaatkan fitur yang terdapat pada smartphone yaitu GPS (Global Positioning System) untuk request koordinat latitude dan longitude yang kemudian dikirimkan oleh server disimpan ke database. Data lokasi yang sudah disimpan kemudian dikirim server dan ditampilkan pada Google maps"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

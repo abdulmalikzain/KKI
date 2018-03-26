@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="abdul.malik.intaihere.MenuProfile.UpdateProfileActivity">
+
+    <RelativeLayout
+        android:id="@+id/barupdateprofile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/layout_top_tabs" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_below="@id/barupdateprofile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="5dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_below="@id/btn_ubahdata"
+                    android:id="@+id/ubah_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_profile"
+                    android:hint="username"
+                    android:visibility="invisible"/>
+                <EditText
+                    android:id="@+id/eduser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_action_user"
+                    android:hint="username"
+                    android:backgroundTint="@color/toska"/>
+                <EditText
+                    android:id="@+id/edemail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_action_email"
+                    android:backgroundTint="@color/toska"
+                    android:layout_below="@id/eduser"
+                    android:hint="email"/>
+                <EditText
+                    android:id="@+id/edtelephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_action_phone"
+                    android:backgroundTint="@color/toska"
+                    android:layout_below="@id/edemail"
+                    android:hint="telephone"/>
+                <EditText
+                    android:id="@+id/edtalamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_location"
+                    android:backgroundTint="@color/toska"
+                    android:layout_below="@id/edtelephone"
+                    android:hint="alamat"/>
+                <Button
+                    android:id="@+id/btn_ubahdata"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/edtalamat"
+                    android:text="Simpan"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:background="#24a681"
+                    android:foregroundTint="?attr/selectableItemBackground"
+                    android:clickable="true"/>
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

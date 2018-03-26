@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="abdul.malik.intaihere.MenuAnggota.DetailUserActivity">
+
+    <RelativeLayout
+        android:id="@+id/tabsdetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/layout_top_tabs" />
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tabsdetail"
+        android:id="@+id/swipe_refresh_detail"
+        android:layout_marginTop="-3dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <include layout="@layout/reldetailuser"/>
+            <RelativeLayout
+                android:layout_marginTop="230dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/carddetailuser"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

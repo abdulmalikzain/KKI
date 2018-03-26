@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "863105544527",
+    "firebase_url": "https://intaihere.firebaseio.com",
+    "project_id": "intaihere",
+    "storage_bucket": "intaihere.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863105544527:android:e47f6f10d86e3f75",
+        "android_client_info": {
+          "package_name": "abdul.malik.intaihere"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863105544527-pja7deb6iqv9tel2j3u0ktfaj3pa9att.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "abdul.malik.intaihere",
+            "certificate_hash": "ad91a5bdacd65fb6d1a04f5cbfb0ff4fe82318e8"
+          }
+        },
+        {
+          "client_id": "863105544527-5avdnq1uf6pma009csqmgenrusvfc4vq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "abdul.malik.intaihere",
+            "certificate_hash": "61ac22ebca83c3fde0485f92a43165cbc0475cef"
+          }
+        },
+        {
+          "client_id": "863105544527-krcgfb6k9suabeo2d7jar2jkalro2g5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFRZmeKRZxN4SnMPnnHygSyWsjjUek_tE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863105544527-krcgfb6k9suabeo2d7jar2jkalro2g5r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

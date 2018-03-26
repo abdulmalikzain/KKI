@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="abdul.malik.intaihere.MenuProfile.ProfileActivity">
+
+    <RelativeLayout
+        android:id="@+id/rellayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/layout_top_tabs" />
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/rel2"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="-2dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/rellayout1"
+        android:background="@color/toska">
+
+        <RelativeLayout
+            android:id="@+id/photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_photo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/boy"
+                app:civ_border_color="@color/grey"
+                app:civ_border_width="3dp" />
+            <ImageView
+                android:id="@+id/choosePhoto"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/profile_photo"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="-20dp"
+                android:background="@drawable/ripple_effect"
+                android:clickable="true"
+                android:src="@drawable/ic_camerareds" />
+            <TextView
+                android:id="@+id/tvUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:text="Simpan Foto"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:layout_below="@id/choosePhoto"/>
+        </RelativeLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_below="@id/rel2"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
+        android:padding="70dp">
+
+        <TextView
+            android:id="@+id/buttonubah"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:clickable="true"
+            android:drawableRight="@drawable/ic_pencil"
+            android:background="?attr/selectableItemBackground"
+            android:text="Ubah data  "
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"/>
+
+        <RelativeLayout
+            android:id="@+id/relusername"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/grey_border_bottom"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_action_user" />
+            <TextView
+                android:id="@+id/ET_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40dp"
+                android:background="@null"
+                android:hint="username"
+                android:editable="false"
+                android:inputType="none" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reltemail"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/grey_border_bottom"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_action_email" />
+
+            <TextView
+                android:id="@+id/ET_Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40dp"
+                android:background="@null"
+                android:hint="email"
+                android:inputType="textNoSuggestions" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reltelephone"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/grey_border_bottom"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_action_phone" />
+
+            <TextView
+                android:id="@+id/ET_Telephone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40dp"
+                android:background="@null"
+                android:hint="telephone"
+                android:inputType="textNoSuggestions" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relalamat"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="210dp"
+            android:background="@drawable/grey_border_bottom"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/tv_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40dp"
+                android:background="@null"
+                android:hint="alamat"
+                android:inputType="textNoSuggestions" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+</RelativeLayout>
