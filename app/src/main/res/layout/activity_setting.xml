@@ -29,7 +29,7 @@
             <RelativeLayout
                 android:id="@+id/relSettProfile"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:background="@drawable/grey_border_bottom"
                 android:clickable="true"
                 android:padding="5dp">
@@ -95,11 +95,35 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="55dp"
                     android:background="@null"
+                    android:text="Tentang Intai Here"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/relinfoaplikasi"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/grey_border_bottom"
+                android:clickable="true"
+                android:layout_below="@id/reltentang">
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/logosplash"
+                    />
+                <TextView
+                    android:id="@+id/tv_infoaplikasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="55dp"
+                    android:background="@null"
                     android:text="Info Aplikasi"
                     android:textSize="20dp" />
             </RelativeLayout>
             <RelativeLayout
-                android:layout_below="@id/reltentang"
+                android:layout_below="@id/relinfoaplikasi"
                 android:id="@+id/relkeluar"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"

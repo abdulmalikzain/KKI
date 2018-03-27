@@ -50,7 +50,7 @@ public class SettingActivity extends AppCompatActivity {
     private static final String TAG = "SearchActivity";
     SharedPreferences sharedpreferences;
     Dialog dialog;
-    TextView tentang, keluar, hapusakun, tvNama;
+    TextView tentang, keluar, hapusakun, tvNama, tvInfoAplikasi;
     RelativeLayout relProfile;
     CircleImageView civFoto;
     String tag_json_obj = "json_obj_req";
@@ -70,12 +70,13 @@ public class SettingActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        hapusakun = (TextView) findViewById(R.id.hapusakun);
-        tentang = (TextView) findViewById(R.id.tentang);
-        keluar = (TextView) findViewById(R.id.keluar);
-        civFoto = findViewById(R.id.civ_settFoto);
-        tvNama = findViewById(R.id.tv_settProfile);
-        relProfile = findViewById(R.id.relSettProfile);
+        hapusakun       = (TextView) findViewById(R.id.hapusakun);
+        tentang         = (TextView) findViewById(R.id.tentang);
+        keluar          = (TextView) findViewById(R.id.keluar);
+        civFoto         = findViewById(R.id.civ_settFoto);
+        tvNama          = findViewById(R.id.tv_settProfile);
+        tvInfoAplikasi  = findViewById(R.id.tv_infoaplikasi);
+        relProfile      = findViewById(R.id.relSettProfile);
         relProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,6 +120,12 @@ public class SettingActivity extends AppCompatActivity {
                 ShowPopup();
             }
         });
+        tvInfoAplikasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showInfoAplikasi();
+            }
+        });
         keluar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -156,6 +163,20 @@ public class SettingActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.popuptentang);
         txtclose = (TextView) dialog.findViewById(R.id.txtclose);
         txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
+    }
+
+    private void showInfoAplikasi(){
+        TextView textView;
+        dialog.setContentView(R.layout.popup_info_aplikasi);
+        textView = dialog.findViewById(R.id.tv_close_info);
+        textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();

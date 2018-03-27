@@ -2,6 +2,7 @@ package abdul.malik.intaihere.Adapter;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import abdul.malik.intaihere.MenuTask.DetailTaskActivity;
 import abdul.malik.intaihere.Model.ModelTask;
 import abdul.malik.intaihere.R;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -42,11 +44,23 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     public class TaskViewHolder extends RecyclerView.ViewHolder {
         TextView tvAUsername, tvAWaktu;
         CircleImageView civFoto;
+        int post;
         public TaskViewHolder(View itemView) {
             super(itemView);
             tvAUsername = itemView.findViewById(R.id.rvtask_username);
             tvAWaktu = itemView.findViewById(R.id.rvtask_waktu);
             civFoto = itemView.findViewById(R.id.rvtask_foto);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    post = getAdapterPosition();
+
+                    Intent intent = new Intent(context, DetailTaskActivity.class);
+                    intent.putExtra("username", tvAUsername.getText().toString().trim());
+                    intent.putExtra("waktu", tvAWaktu.getText().toString().trim());
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 

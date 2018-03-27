@@ -70,7 +70,8 @@
 
         <activity android:name=".MenuTask.TaskActivity" />
         <activity android:name=".MenuTask.InputTaskActivity" />
-        <activity android:name=".PermissionHelper.SplashPermissionActivity"></activity>
+        <activity android:name=".PermissionHelper.SplashPermissionActivity" />
+        <activity android:name=".MenuTask.DetailTaskActivity"></activity>
     </application>
 
 </manifest>

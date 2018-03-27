@@ -221,17 +221,4 @@ public class TaskActivity extends AppCompatActivity {
 
     }
 
-    private void popupDetailStatus(){
-        TextView txtclose;
-        dialog.setContentView(R.layout.popup_detailstatus);
-        txtclose = dialog.findViewById(R.id.txtclose_detailstatus);
-        txtclose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.show();
-    }
 }
