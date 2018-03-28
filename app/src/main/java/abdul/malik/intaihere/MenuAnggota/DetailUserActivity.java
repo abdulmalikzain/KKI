@@ -16,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.StringRequest;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -105,10 +106,11 @@ public class DetailUserActivity extends AppCompatActivity implements SwipeRefres
                     email.setText(Email);
                     alamat.setText(Alamat);
                     telephone.setText(Html.fromHtml(Telephone));
-
-                    if (obj.getString(TAG_GAMBAR)!=""){
-                        thumb_image.setImageUrl(Gambar, imageLoader);
-                    }
+                    Picasso.with(getApplication()).load(Gambar).centerCrop().resize(300, 300)
+                            .error(R.drawable.boy).into(thumb_image);
+//                    if (obj.getString(TAG_GAMBAR)!=""){
+//                        thumb_image.setImageUrl(Gambar, imageLoader);
+//                    }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
