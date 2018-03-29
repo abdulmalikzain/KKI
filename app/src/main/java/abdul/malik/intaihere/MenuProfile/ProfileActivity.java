@@ -54,7 +54,7 @@ import abdul.malik.intaihere.Utils.Server;
 import static abdul.malik.intaihere.LoginActivity.my_shared_preferences;
 import static abdul.malik.intaihere.LoginActivity.session_status;
 
-public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
+public class ProfileActivity extends AppCompatActivity {
     TextView textView, tv_upload, tv_email, tv_telephone,tv_alamat, buttonubah;
     ImageView ib_choose;
     int success;
@@ -76,8 +76,6 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
     int bitmap_size = 40; // image quality 1 - 100;
     int max_resolution_image = 800;
     ImageView thumb_image;
-    SwipeRefreshLayout swipe;
-    ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
     String tag_json_obj = "json_obj_req";
     Toolbar mActionToolbar;
@@ -99,16 +97,15 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        textView = (TextView) findViewById(R.id.ET_username);
-        tv_email = (TextView) findViewById(R.id.ET_Email);
-        tv_telephone = (TextView) findViewById(R.id.ET_Telephone);
-        ib_choose = (ImageView) findViewById(R.id.choosePhoto);
-        tv_upload = (TextView) findViewById(R.id.tvUpload);
+        textView = findViewById(R.id.ET_username);
+        tv_email =  findViewById(R.id.ET_Email);
+        tv_telephone = findViewById(R.id.ET_Telephone);
+        ib_choose = findViewById(R.id.choosePhoto);
+        tv_upload = findViewById(R.id.tvUpload);
         tv_upload.setVisibility(View.INVISIBLE);
-        thumb_image = (ImageView) findViewById(R.id.profile_photo);
-        swipe       = (SwipeRefreshLayout) findViewById(R.id.rel2);
-        buttonubah = (TextView) findViewById(R.id.buttonubah);
-        tv_alamat = (TextView) findViewById(R.id.tv_alamat);
+        thumb_image =  findViewById(R.id.profile_photo);
+        buttonubah = findViewById(R.id.buttonubah);
+        tv_alamat = findViewById(R.id.tv_alamat);
 
 //        sharedpreferences = getSharedPreferences(my_shared_preferences, MODE_PRIVATE);
 //        String image = (sharedpreferences.getString("image", null));
@@ -345,11 +342,6 @@ public class ProfileActivity extends AppCompatActivity implements SwipeRefreshLa
             width = (int) (height * bitmapRatio);
         }
         return Bitmap.createScaledBitmap(image, width, height, true);
-    }
-
-    @Override
-    public void onRefresh() {
-
     }
 
     private void fotoProfile(){

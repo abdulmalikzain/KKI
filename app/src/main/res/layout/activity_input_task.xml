@@ -11,66 +11,81 @@
         android:layout_height="wrap_content"
         android:id="@+id/rellayout1">
 
-        <include layout="@layout/layout_top_tabs"/>
+        <include layout="@layout/layout_top_tabs" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/ic_power"/>
     </RelativeLayout>
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rellayout1"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_height="match_parent"
+        android:layout_below="@id/rellayout1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tujuan"
-            android:textStyle="bold"
-            android:textSize="10pt"/>
-        <AutoCompleteTextView
-            android:id="@+id/edinp_lokasitujuan"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#11000000"
-            android:hint="lokasi tujuan"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Status"
-            android:textStyle="bold"
-            android:textSize="10pt"/>
-        <AutoCompleteTextView
-            android:id="@+id/edinp_status"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#11000000"
-            android:hint="keterangan"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tambahkan Gambar"
-            android:textSize="10pt"
-            android:textStyle="bold"/>
-        <ImageView
-            android:id="@+id/ivinp_foto"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:src="@mipmap/ic_launcher"/>
-        <ImageView
-            android:id="@+id/ivinp_btnfoto"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_camerareds"/>
-        <Button
-            android:id="@+id/btninp_buat"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="Buat"
-            android:textAllCaps="false"
-            android:foreground="?attr/selectableItemBackground"
-            android:clickable="true"
-            />
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tujuan"
+                android:textStyle="bold"
+                android:textSize="9pt"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/edinp_lokasitujuan"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:imeOptions="actionPrevious"
+                android:hint="Ketik lokasi tujuan"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textSize="9pt"/>
+            <AutoCompleteTextView
+                android:id="@+id/edinp_status"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="keterangan"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tambahkan Gambar"
+                android:textSize="9pt"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"/>
+            <ImageView
+                android:id="@+id/ivinp_foto"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:id="@+id/ivinp_btnfoto"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_camerareds"/>
+            <Button
+                android:id="@+id/btninp_buat"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Buat"
+                android:textAllCaps="false"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </RelativeLayout>
