@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ import abdul.malik.intaihere.Utils.Server;
 
 public class DetailUserActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
 
-    NetworkImageView thumb_image;
+    ImageView thumb_image;
     TextView username, email, telephone, alamat;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
     SwipeRefreshLayout swipe;
@@ -60,7 +61,7 @@ public class DetailUserActivity extends AppCompatActivity implements SwipeRefres
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        thumb_image = (NetworkImageView) findViewById(R.id.gambar_detail);
+        thumb_image = (ImageView) findViewById(R.id.gambar_detail);
         username       = (TextView) findViewById(R.id.detailuser);
         email         = (TextView) findViewById(R.id.detailemail);
         telephone         = (TextView) findViewById(R.id.detailtelephone);
@@ -105,7 +106,7 @@ public class DetailUserActivity extends AppCompatActivity implements SwipeRefres
                     username.setText(Username);
                     email.setText(Email);
                     alamat.setText(Alamat);
-                    telephone.setText(Html.fromHtml(Telephone));
+                    telephone.setText(Telephone);
                     Picasso.with(getApplication()).load(Gambar).centerCrop().resize(300, 300)
                             .error(R.drawable.boy).into(thumb_image);
 //                    if (obj.getString(TAG_GAMBAR)!=""){

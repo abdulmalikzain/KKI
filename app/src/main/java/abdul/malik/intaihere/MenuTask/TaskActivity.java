@@ -111,15 +111,14 @@ public class TaskActivity extends AppCompatActivity {
                     for (int i = 0; i <jsonArray.length() ; i++) {
                         JSONObject data = jsonArray.getJSONObject(i);
 
-//                        final ModelTask task= new ModelTask();
-//                        task.setUsername(data.getString("username"));
-//                        task.setGambar(data.getString("image"));
                         String dataDate = data.getString("waktu");
                         String Nama = data.getString("username");
                         String image = data.getString("image");
-                        covertTimeToText(dataDate, Nama, image);
+                        String status = data.getString("status");
+                        String tujuan = data.getString("tujuan");
+                        String foto_status = data.getString("foto_status");
+                        covertTimeToText(dataDate, Nama, image, status, tujuan, foto_status);
 
-//                        modelTasks.add(task);
                         //creating adapter object and setting it to recyclerview
                         TaskAdapter adapter = new TaskAdapter(TaskActivity.this, modelTasks);
                         recyclerView.setAdapter(adapter);
@@ -170,7 +169,7 @@ public class TaskActivity extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(request, tag_json_obj);
     }
 
-    public String covertTimeToText(String dataDate, String Nama, String image) {
+    public String covertTimeToText(String dataDate, String Nama, String image, String status, String tujuan, String foto_status) {
 
         String convTime = null;
 
@@ -209,6 +208,9 @@ public class TaskActivity extends AppCompatActivity {
             modelTask.setWaktu(convTime);
             modelTask.setUsername(Nama);
             modelTask.setGambar(image);
+            modelTask.setStatus(status);
+            modelTask.setTujuan(tujuan);
+            modelTask.setFoto_status(foto_status);
             modelTasks.add(modelTask);
 
 

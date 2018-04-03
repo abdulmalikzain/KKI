@@ -38,18 +38,23 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         ModelTask modelTask = taskList.get(position);
         holder.tvAUsername.setText(modelTask.getUsername());
         holder.tvAWaktu.setText(modelTask.getWaktu());
+        holder.tvStatus.setText(modelTask.getStatus());
+//        holder.tvTujuan.setText(modelTask.getTujuan());
+//        holder.tvFoto_status.setText(modelTask.getFoto_status());
         Picasso.with(context).load(modelTask.getGambar()).error(R.drawable.boy).into(holder.civFoto);
     }
 
     public class TaskViewHolder extends RecyclerView.ViewHolder {
-        TextView tvAUsername, tvAWaktu;
+        TextView tvAUsername, tvAWaktu, tvStatus, tvTujuan, tvFoto_status;
         CircleImageView civFoto;
+
         int post;
         public TaskViewHolder(View itemView) {
             super(itemView);
             tvAUsername = itemView.findViewById(R.id.rvtask_username);
             tvAWaktu = itemView.findViewById(R.id.rvtask_waktu);
             civFoto = itemView.findViewById(R.id.rvtask_foto);
+            tvStatus = itemView.findViewById(R.id.tv_detStatus);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -58,6 +63,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                     Intent intent = new Intent(context, DetailTaskActivity.class);
                     intent.putExtra("username", tvAUsername.getText().toString().trim());
                     intent.putExtra("waktu", tvAWaktu.getText().toString().trim());
+                    intent.putExtra("status", tvStatus.getText().toString().trim());
+                    intent.putExtra("tujuan", tvTujuan.getText().toString().trim());
+                    intent.putExtra("foto_status", tvFoto_status.getText().toString().trim());
                     context.startActivity(intent);
                 }
             });
