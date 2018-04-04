@@ -39,8 +39,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         holder.tvAUsername.setText(modelTask.getUsername());
         holder.tvAWaktu.setText(modelTask.getWaktu());
         holder.tvStatus.setText(modelTask.getStatus());
-//        holder.tvTujuan.setText(modelTask.getTujuan());
-//        holder.tvFoto_status.setText(modelTask.getFoto_status());
+        holder.tvTujuan.setText(modelTask.getTujuan());
+        holder.tvFoto_status.setText(modelTask.getFoto_status());
         Picasso.with(context).load(modelTask.getGambar()).error(R.drawable.boy).into(holder.civFoto);
     }
 
@@ -54,7 +54,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             tvAUsername = itemView.findViewById(R.id.rvtask_username);
             tvAWaktu = itemView.findViewById(R.id.rvtask_waktu);
             civFoto = itemView.findViewById(R.id.rvtask_foto);
-            tvStatus = itemView.findViewById(R.id.tv_detStatus);
+            tvStatus    = itemView.findViewById(R.id.rvtask_status);
+            tvTujuan    = itemView.findViewById(R.id.rvtask_tujuan);
+            tvFoto_status   = itemView.findViewById(R.id.rvtask_fotostatus);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

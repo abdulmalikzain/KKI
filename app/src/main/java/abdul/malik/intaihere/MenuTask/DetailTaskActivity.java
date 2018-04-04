@@ -1,10 +1,13 @@
 package abdul.malik.intaihere.MenuTask;
 
 import android.content.Context;
+import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
@@ -18,6 +21,7 @@ public class DetailTaskActivity extends AppCompatActivity {
    private TextView tvDetUsername, tvDetWaktu, tvDetStatus, tvDetTujuan, tvFotoStatus;
    private ImageView ivFotoStatus;
    private String fotoStatus, fotoImage;
+   private String TAG = "";
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +39,9 @@ public class DetailTaskActivity extends AppCompatActivity {
         tvDetWaktu.setText(bundle.getString("waktu"));
         tvDetStatus.setText(bundle.getString("status"));
         tvDetTujuan.setText(bundle.getString("tujuan"));
-        tvFotoStatus.setText(bundle.getString("foto_status"));
         fotoStatus = bundle.getString("foto_status");
-        Picasso.with(getApplication()).load(fotoStatus).centerCrop().into(ivFotoStatus);
+        Picasso.with(getApplication()).load(fotoStatus).error(R.drawable.boy).into(ivFotoStatus);
+
+        Log.d(TAG, "onCreate: "+fotoStatus);
     }
 }

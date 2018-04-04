@@ -40,6 +40,18 @@
                     android:layout_height="wrap_content"
                     android:text="waktu"
                     android:textSize="6pt"/>
+                <TextView
+                    android:id="@+id/rvtask_status"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:id="@+id/rvtask_tujuan"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:id="@+id/rvtask_fotostatus"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"/>
             </LinearLayout>
 
         </LinearLayout>

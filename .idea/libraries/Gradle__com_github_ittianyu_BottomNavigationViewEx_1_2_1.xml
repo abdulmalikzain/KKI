@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.ittianyu:BottomNavigationViewEx-1.2.1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/BottomNavigationViewEx-1.2.1.aar/bb0a93ea8eb4bf4e473d4f0c51b1c3a7/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/BottomNavigationViewEx-1.2.1.aar/bb0a93ea8eb4bf4e473d4f0c51b1c3a7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/BottomNavigationViewEx-1.2.1.aar/68e193c3ba29bbdf96d479d389669069/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/BottomNavigationViewEx-1.2.1.aar/68e193c3ba29bbdf96d479d389669069/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

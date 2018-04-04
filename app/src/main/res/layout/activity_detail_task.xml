@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/ic_cancel"
         android:backgroundTint="#000"
-        android:layout_marginTop="-550dp"
+        android:layout_marginTop="-560dp"
         android:layout_below="@id/iv_detGambar"/>
 
     <TextView
@@ -40,7 +40,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tujuan"
-        android:layout_marginTop="400dp"
         android:layout_below="@id/tv_detWaktu"/>
     <TextView
         android:id="@+id/tv_detStatus"
@@ -49,5 +48,6 @@
         android:text="status"
         android:textAlignment="center"
         android:background="#d4d4d4"
+        android:layout_marginTop="400dp"
         android:layout_below="@id/tv_detTujuan"/>
 </RelativeLayout>
