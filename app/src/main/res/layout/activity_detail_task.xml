@@ -4,50 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:id="@+id/relative_detail"
+    android:background="#000"
     tools:context="abdul.malik.intaihere.MenuTask.DetailTaskActivity">
-
     <ImageView
         android:id="@+id/iv_detGambar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_margin="-10dp"/>
+    <RelativeLayout
+        android:id="@+id/relbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/iv_detGambar"
+        android:layout_alignParentTop="true"
+        android:padding="5dp">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tabsdetailtask"
+                android:theme="@style/ToolBarStyle">
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/boy"/>
+        <TextView
+            android:id="@+id/tv_detUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textSize="8pt"
+            android:textColor="#fff"
+            android:layout_marginLeft="100dp"/>
+
+        <TextView
+            android:id="@+id/tv_detWaktu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Waktu"
+            android:layout_marginLeft="100dp"
+            android:textSize="6pt"
+            android:textColor="#fff"
+            android:layout_below="@id/tv_detUsername"/>
+
+    </RelativeLayout>
 
     <TextView
-        android:id="@+id/txtclose_detailstatus"
-        android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_cancel"
-        android:backgroundTint="#000"
-        android:layout_marginTop="-560dp"
-        android:layout_below="@id/iv_detGambar"/>
-
-    <TextView
-        android:id="@+id/tv_detUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Username"
-        android:layout_below="@id/txtclose_detailstatus"/>
-    <TextView
-        android:id="@+id/tv_detWaktu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Waktu"
-        android:layout_below="@id/tv_detUsername"/>
-
+        android:background="@drawable/ic_getmarkers"
+        android:backgroundTint="@color/white"
+        android:layout_below="@id/relbar"/>
     <TextView
         android:id="@+id/tv_detTujuan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tujuan"
-        android:layout_below="@id/tv_detWaktu"/>
+        android:textColor="@color/white"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/relbar"
+        android:background="#3d000000"/>
     <TextView
         android:id="@+id/tv_detStatus"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="status"
         android:textAlignment="center"
-        android:background="#d4d4d4"
+        android:background="#22ffffff"
         android:layout_marginTop="400dp"
+        android:textColor="@color/white"
         android:layout_below="@id/tv_detTujuan"/>
 </RelativeLayout>

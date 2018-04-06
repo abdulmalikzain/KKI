@@ -4,7 +4,9 @@ import android.content.Context;
 import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +24,7 @@ public class DetailTaskActivity extends AppCompatActivity {
    private ImageView ivFotoStatus;
    private String fotoStatus, fotoImage;
    private String TAG = "";
+   Toolbar mActionToolbar;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +43,24 @@ public class DetailTaskActivity extends AppCompatActivity {
         tvDetStatus.setText(bundle.getString("status"));
         tvDetTujuan.setText(bundle.getString("tujuan"));
         fotoStatus = bundle.getString("foto_status");
-        Picasso.with(getApplication()).load(fotoStatus).error(R.drawable.boy).into(ivFotoStatus);
+        Picasso.with(getApplication()).load(fotoStatus).error(R.drawable.boy)
+                .centerInside().resize(500, 1200).into(ivFotoStatus);
 
-        Log.d(TAG, "onCreate: "+fotoStatus);
+
+        mActionToolbar = findViewById(R.id.tabsdetailtask);
+        setSupportActionBar(mActionToolbar);
+        getSupportActionBar().setTitle("");
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+    }
+
+    //button back toolbar
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()== android.R.id.home)
+            finish();
+        return super.onOptionsItemSelected(item);
     }
 }

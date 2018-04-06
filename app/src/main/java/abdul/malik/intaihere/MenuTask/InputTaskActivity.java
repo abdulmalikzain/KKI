@@ -74,7 +74,6 @@ public class InputTaskActivity extends AppCompatActivity implements
     Button btnInpBuat;
     SharedPreferences sharedpreferences;
     ProgressDialog progressDialog;
-    SearchView searchView;
 
     private static final String LOG_TAG = "InputTaskActivity";
     private static final int GOOGLE_API_CLIENT_ID = 0;
@@ -92,8 +91,8 @@ public class InputTaskActivity extends AppCompatActivity implements
     public final int REQUEST_CAMERA = 0;
     public final int SELECT_FILE = 1;
 
-    int bitmap_size = 40; // image quality 1 - 100;
-    int max_resolution_image = 800;
+    int bitmap_size = 100; // image quality 1 - 100;
+    int max_resolution_image = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

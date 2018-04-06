@@ -98,7 +98,6 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private static final String TAG = "HomeActivity";
     private static final int ACTIVITY_NUM = 0;
-    private static final int ERROR_DIALOG_REQUEST = 9001;
 
     private Context mContext = HomeActivity.this;
 
@@ -147,9 +146,11 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
             public void onClick(View view) {
                 getMarkers();
 //                circleImageView.performClick();
+
             }
 
         });
+
 
         CheckMapPermission();
         dialog = new Dialog(this);
@@ -419,12 +420,12 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
-    private void addMarker(final String title, LatLng latLng, final String telephone) {
+    private void addMarker(String title, LatLng latLng, final String telephone) {
 
         markerOptions.position(latLng);
         markerOptions.title(title);
-//        markerOptions.snippet(jalan);
-        markerOptions.snippet(telephone);
+        markerOptions.snippet(jalan);
+//        markerOptions.snippet(telephone);
         markerOptions.icon(BitmapDescriptorFactory.fromBitmap(createCustomMarker(HomeActivity.this)));
 
         mMap.addMarker(markerOptions);
@@ -490,7 +491,6 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
                     JSONObject jObj = new JSONObject(response);
                     String getObject = jObj.getString("wisata");
                     JSONArray jsonArray = new JSONArray(getObject);
-
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         image          = jsonObject.getString(IMAGE);
@@ -504,14 +504,14 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
                             addMarker(title, latLng, telephone);
                         }
 //                        addMarker(title, latLng, telephone);
-//                        getCompleteAddressString(latLng.latitude, latLng.longitude);
+                        getCompleteAddressString(latLng.latitude, latLng.longitude);
 //                        markerOptions.position(latLng);
 //                        markerOptions.title(title);
 //                        markerOptions.snippet(telephone);
 //                        markerOptions.icon(BitmapDescriptorFactory.fromBitmap(createCustomMarker(HomeActivity.this)));
 //                        mMap.addMarker(markerOptions);
 
-                        Toast.makeText(getApplicationContext() ,"Menampilkan Marker", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getApplicationContext() ,"Menampilkan Marker", Toast.LENGTH_SHORT).show();
 //                        createCustomMarker(HomeActivity.this);
                     }
 
@@ -539,10 +539,15 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
         try {
             List<Address> addresses = geocoder.getFromLocation(LATITUDE, LONGITUDE, 1);
             if (addresses != null) {
-                jalan = addresses.get(0).getThoroughfare();
+//                jalan = addresses.get(0).getThoroughfare();
+                Address returnedAddress = addresses.get(0);
+                StringBuilder strReturnedAddress = new StringBuilder("");
+
                 for (int i = 0; i <= jalan.length() ; i++) {
+                    strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n");
                 }
-                Log.w("My Current", jalan.toString());
+
+                Log.w("My Current", returnedAddress.toString());
             } else {
                 Log.w("My Current", "No Address returned!");
             }
@@ -550,6 +555,7 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
             e.printStackTrace();
             Log.w("My Current", "Canont get Address!");
         }
+
         return strAdd;
     }
 
